@@ -27,10 +27,30 @@ body {
   font-family: "Muli", sans-serif;
 }
 
+.ctaContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.ctaContainer .cta {
+  background-color: #ff0037;
+  padding: 0 32px;
+  height: 40px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: white;
+  transition: all 0.2s ease;
+}
+.ctaContainer .cta:hover {
+  transform: translateY(2px);
+  opacity: 0.8;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
-  margin-bottom: 10px;
 }
 table td, table th {
   border: 1px solid #B4B4BA;
@@ -149,6 +169,25 @@ table textarea {
 .table__checkbox input[type=checkbox]:checked:after {
   opacity: 1;
   transform: scale(1);
+}
+.table__checkboxAlt {
+  justify-content: flex-start;
+  display: inline-flex;
+  font-weight: 600;
+}
+.table__checkboxAlt input {
+  margin-right: 2px;
+}
+.table__checkboxAlt input[type=checkbox] {
+  width: 16px !important;
+  height: 16px;
+}
+.table__checkboxAlt input[type=checkbox]:after {
+  width: 12px;
+  height: 12px;
+}
+.table__checkboxAlt span {
+  font-weight: 900 !important;
 }
 .table__title {
   font-size: 24px;

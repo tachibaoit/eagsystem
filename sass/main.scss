@@ -107,11 +107,33 @@ body {
     font-family: $font;
 }
 
+.ctaContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+    .cta {
+        background-color: #ff0037;
+        padding: 0 32px;
+        height: 40px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        cursor: pointer;
+        color: white;
+        transition: all 0.2s ease;
+
+        &:hover {
+            transform: translateY(2px);
+            opacity: 0.8;
+        }
+    }
+}
+
 
 table {
     border-collapse: collapse;
     width: 100%;
-    margin-bottom: 10px;
 
     td, th {
       border: 1px solid $neu-06;
@@ -258,6 +280,31 @@ table {
         input[type="checkbox"]:checked:after {
             opacity: 1;
             transform: scale(1);
+        }
+    }
+
+    &__checkboxAlt {
+        justify-content: flex-start;
+        display: inline-flex;
+        font-weight: 600;
+
+        input {
+            margin-right: 2px;
+        }
+
+        input[type="checkbox"] {
+            width: 16px !important;
+            height: 16px;
+
+        }
+
+        input[type="checkbox"]:after {
+            width: 12px;
+            height: 12px;
+        }
+
+        span {
+            font-weight: 900 !important;
         }
     }
 

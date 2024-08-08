@@ -53,87 +53,120 @@
             </div>
 
             <div class="table__tableWrapper">
-                <table id="myTable">
-                    <thead>
-                        <tr>
-                            <th>項次 <br> STT</th>
-                            <th>代號 <br> Mã VL </th>
-                            <th>中文名稱 <br> Tên tiếng hoa</th>
-                            <th>越文名稱 <br> Tên tiếng việt</th>
-                            <th>規格 <br> Quy cách</th>
-                            <th width="80px">單位 <br> Đơn vị</th>
-                            <th width="80px">數量 <br> Số lượng</th>
-                            <th></th>
-                            <th>單價 <br> Đơn giá</th>
-                            <th></th>
-                            <th>小計 <br> Tổng</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td><input type="text" name=""></td>
-                            <td><input type="text" name=""></td>
-                            <td><input type="text" name=""></td>
-                            <td><input type="text" name=""></td>
-                            <td><input type="text" name=""></td>
-                            <td><input type="number" name="quantity" class="quantity" step="any"></td>
-                            <td>x</td>
-                            <td><input type="number" name="unitPrice" class="unitPrice" step="any"></td>
-                            <td>=</td>
-                            <td><input type="text" name="subtotal" class="subtotal" readonly></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td><input type="text" name=""></td>
-                            <td><input type="text" name=""></td>
-                            <td><input type="text" name=""></td>
-                            <td><input type="text" name=""></td>
-                            <td><input type="text" name=""></td>
-                            <td><input type="number" name="quantity" class="quantity" step="any"></td>
-                            <td>x</td>
-                            <td><input type="number" name="unitPrice" class="unitPrice" step="any"></td>
-                            <td>=</td>
-                            <td><input type="text" name="subtotal" class="subtotal" readonly></td>
-                        </tr>
-                        <!-- Các hàng sẽ được thêm vào đây -->
-                        <tr>
-                            <td colspan="6" style="font-weight: bold; font-size: 16px; position: relative;">
-                                <button id="addRowButton">+</button>
-                                <button id="deleteLastRowButton">-</button>
-                                <span>Tổng của từng cột</span>
-                            </td>
-                            <td><input type="text" id="totalQuantity" readonly></td>
-                            <td></td>
-                            <td><input type="text" id="totalUnitPrice" readonly></td>
-                            <td></td>
-                            <td><input type="text" id="totalSubtotal" readonly></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <div class="table__checkbox">
-                                    <input style="width: initial;" type="checkbox" name="typeMoney" value="usd" id="">
-                                    有發票
-                                </div>
-                                <br>
-                                <span>Có hóa đơn</span>
-                            </td>
-                            <td>
-                                <div class="table__checkbox">
-                                    <input style="width: initial;" type="checkbox" name="typeMoney" value="usd" id="">
-                                    無發票(原因):
-                                </div>
-                                <br>
-                                <span>Không hóa đơn(Nguyên nhân):</span>
-                            </td>
-                            <td colspan="9">
-                                <textarea name="" id="" cols="30" rows="5" placeholder="Nhập lý do.."></textarea>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <form action="">
+                    <table id="myTable">
+                        <thead>
+                            <tr>
+                                <th>項次 <br> STT</th>
+                                <th>代號 <br> Mã VL </th>
+                                <th>中文名稱 <br> Tên tiếng hoa</th>
+                                <th>越文名稱 <br> Tên tiếng việt</th>
+                                <th>規格 <br> Quy cách</th>
+                                <th width="80px">單位 <br> Đơn vị</th>
+                                <th width="80px">數量 <br> Số lượng</th>
+                                <th></th>
+                                <th>單價 <br> Đơn giá</th>
+                                <th></th>
+                                <th>小計 <br> Tổng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><input type="text" name=""></td>
+                                <td><input type="text" name=""></td>
+                                <td><input type="text" name=""></td>
+                                <td><input type="text" name=""></td>
+                                <td><input type="text" name=""></td>
+                                <td><input type="number" name="quantity" class="quantity" step="any"></td>
+                                <td>x</td>
+                                <td><input type="number" name="unitPrice" class="unitPrice" step="any"></td>
+                                <td>=</td>
+                                <td><input type="text" name="subtotal" class="subtotal" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><input type="text" name=""></td>
+                                <td><input type="text" name=""></td>
+                                <td><input type="text" name=""></td>
+                                <td><input type="text" name=""></td>
+                                <td><input type="text" name=""></td>
+                                <td><input type="number" name="quantity" class="quantity" step="any"></td>
+                                <td>x</td>
+                                <td><input type="number" name="unitPrice" class="unitPrice" step="any"></td>
+                                <td>=</td>
+                                <td><input type="text" name="subtotal" class="subtotal" readonly></td>
+                            </tr>
+                            <!-- Các hàng sẽ được thêm vào đây -->
+                            <tr>
+                                <td colspan="6" style="font-weight: bold; font-size: 16px; position: relative;">
+                                    <button id="addRowButton">+</button>
+                                    <button id="deleteLastRowButton">-</button>
+                                    <span>Tổng của từng cột</span>
+                                </td>
+                                <td><input type="text" id="totalQuantity" readonly></td>
+                                <td></td>
+                                <td><input type="text" id="totalUnitPrice" readonly></td>
+                                <td></td>
+                                <td><input type="text" id="totalSubtotal" readonly></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="table__checkbox">
+                                        <input style="width: initial;" type="checkbox" name="typeMoney" value="usd" id="">
+                                        有發票
+                                    </div>
+                                    <br>
+                                    <span>Có hóa đơn</span>
+                                </td>
+                                <td>
+                                    <div class="table__checkbox">
+                                        <input style="width: initial;" type="checkbox" name="typeMoney" value="usd" id="">
+                                        無發票(原因):
+                                    </div>
+                                    <br>
+                                    <span>Không hóa đơn(Nguyên nhân):</span>
+                                </td>
+                                <td colspan="9">
+                                    <textarea name="" id="" cols="30" rows="5" placeholder="Nhập lý do.."></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="11" style="text-align: left; font-weight: 600; padding: 8px;">用途及說明
+                                    <div class="table__checkbox table__checkboxAlt">
+                                        (&nbsp;<input style="width: initial;" type="checkbox" name="typeMoney" value="usd" id="">急 /&nbsp;<input style="width: initial;" type="checkbox" name="typeMoney" value="usd" id="">緩 ):
+                                    </div>
+                                    <br>
+                                    說明原因 - Mục đích:
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table id="myTable2">
+                        <thead>
+                            <tr>
+                                <th>核定</th>
+                                <th>管理部審查</th>
+                                <th>部門主管</th>
+                                <th>單位主管</th>
+                                <th>提出</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="height: 60px;"></td>
+                                <td style="height: 60px;"></td>
+                                <td style="height: 60px;"></td>
+                                <td style="height: 60px;"></td>
+                                <td style="height: 60px;"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="ctaContainer">
+                        <button name="submit" class="cta" type="submit">Submit</button>
+                    </div>
+                </form>
             </div>
-
         </div>
     </div>
 </body>
@@ -185,6 +218,7 @@
             document.querySelector(".table__select").style.borderColor = backgroundColor;
             document.querySelector(".table__wrapper").style.borderColor = backgroundColor;
             document.getElementById("addRowButton").style.color = backgroundColor;
+            // document.querySelector(".cta").style.backgroundColor = backgroundColor;
     });
 </script>
 
@@ -207,7 +241,7 @@
         let totalSubtotal = 0;
 
         document.querySelectorAll('#myTable tbody tr').forEach((row, index) => {
-            if (index < document.querySelectorAll('#myTable tbody tr').length - 2) { // Loại trừ hàng tổng và hàng thêm mới
+            if (index < document.querySelectorAll('#myTable tbody tr').length - 3) { // Loại trừ hàng tổng và hàng thêm mới
                 calculateSubtotal(row);
 
                 totalQuantity += parseFloat(row.querySelector('.quantity').value) || 0;
@@ -231,7 +265,7 @@
     document.getElementById('addRowButton').addEventListener('click', function() {
         const table = document.getElementById('myTable').getElementsByTagName('tbody')[0];
         const rowCount = table.rows.length;
-        const newRow = table.insertRow(rowCount - 2); // Thêm hàng mới trước hàng tổng
+        const newRow = table.insertRow(rowCount - 3); // Thêm hàng mới trước hàng tổng
 
         newRow.innerHTML = `
             <td>${rowCount - 1}</td>
@@ -260,8 +294,8 @@
         const rowCount = table.rows.length;
 
         // Xóa hàng cuối cùng trước hàng tổng
-        if (rowCount > 3) { // Đảm bảo luôn có ít nhất một hàng và hàng tổng
-            table.deleteRow(rowCount - 3);
+        if (rowCount > 4) { // Đảm bảo luôn có ít nhất một hàng và hàng tổng
+            table.deleteRow(rowCount - 4);
             calculateTotal();
         }
     });
