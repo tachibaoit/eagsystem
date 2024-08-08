@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 0;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  color: inherit;
+  box-sizing: border-box;
+}
+*:focus {
+  outline: 0;
+}
+
+::-moz-selection {
+  background-color: #ff682b;
+  color: white;
+}
+
+::selection {
+  background-color: #145838;
+  color: white;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 10px;
+}
+table td, table th {
+  border: 1px solid #B4B4BA;
+  text-align: left;
+  padding: 4px;
+}
+table th {
+  text-align: center;
+  background-color: #ff682b;
+  color: white;
+}
+table td {
+  text-align: center;
+}
+table textarea {
+  width: 100%;
+  padding: 8px;
+}
+
+.table__wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border: solid 1px #ff682b;
+  padding: 24px;
+}
+.table__select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  font-size: 36px;
+  color: #ff682b;
+  border: solid 1px #ff682b;
+  transition: all 0.2s ease;
+}
+.table__select:hover {
+  opacity: 0.6;
+}
+.table__select select {
+  font-size: 18px;
+  font-weight: 500;
+}
+.table__input {
+  display: flex;
+  align-items: center;
+  width: 20%;
+}
+.table__input label {
+  width: 50%;
+  display: inline;
+}
+.table__input input {
+  border: solid 1px #7F8088;
+  width: 100%;
+  transition: all 0.2s ease;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+.table__input input:focus {
+  border: solid 1px #363842;
+}
+.table__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.table__subHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.table__name label {
+  width: 60%;
+}
+.table__option {
+  display: flex;
+  justify-content: flex-end;
+  margin: 12px 0;
+}
+.table__option div {
+  margin-right: 20px;
+}
+.table__checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+.table__checkbox input {
+  margin-right: 6px;
+}
+.table__checkbox input[type=checkbox] {
+  position: relative;
+  cursor: pointer;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border-radius: 4px;
+  border: solid 1px #363842;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.table__checkbox input[type=checkbox]:after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: all 0.2s ease;
+  transform: scale(0.5);
+  background-image: url(../assets/icon-check.svg);
+}
+.table__checkbox input[type=checkbox]:checked:after {
+  opacity: 1;
+  transform: scale(1);
+}
+.table__title {
+  font-size: 24px;
+  font-weight: 600;
+}
+.table__logo {
+  transform: translate(80px, -36px);
+  width: 20%;
+}
+.table__logo img {
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+.table__tableWrapper input {
+  border: solid 1px #7F8088;
+  width: 100%;
+  transition: all 0.2s ease;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+.table__tableWrapper input:focus {
+  border: solid 1px #363842;
+}
+
+#addRowButton {
+  position: absolute;
+  top: 0;
+  left: 4px;
+  font-size: 20px;
+  font-weight: 500;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #ff682b;
+}
+#addRowButton:hover {
+  opacity: 0.7;
+}/*# sourceMappingURL=main.css.map */

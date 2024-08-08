@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="table">
+        <div class="table__wrapper">
+            <header class="table__select">
+                <select id="companySelect">
+                    <option style="color: #ff682b;" value="eag" data-color="#ff682b" data-logo="assets/logo-eag.jpg">CÔNG TY TNHH EAGLE NICE VN</option>
+                    <option style="color: #0201fd;" value="pki" data-color="#0201fd" data-logo="assets/logo-pki.jpg">CÔNG TY TNHH PRO KINGTEX VN</option>
+                    <option style="color: #145838;" value="ela" data-color="#145838" data-logo="assets/logo-ela.jpg">CÔNG TY TNHH DIN SUN VN</option>
+                </select>
+            </header>
+            <div class="table__header">
+                <div class="table__logo">
+                    <img id="logo" src="assets/logo-eag.jpg" alt="logo">
+                </div>
+                <div class="table__title">ĐƠN XIN ĐẶT MUA需求申請書</div>
+                <div class="table__input">
+                    <label for="">單據編號:</label>
+                    <input type="text">
+                </div>
+            </div>
+            <div class="table__subHeader">
+                <div class="table__name table__input"><label for="">部門單位：</label><input type="text"></div>
+                <div class="table__day">申請日期：<input type="date" name="" id=""></div>
+            </div>
+            <div class="table__option">
+                <div>幣別:</div>
+                <div class="table__checkbox">
+                    <input type="checkbox" name="typeMoney" value="usd" id="">
+                    美金USD
+                </div>
+                <div class="table__checkbox">
+                    <input type="checkbox" name="typeMoney" value="vnd" id="">
+                    越幣VND
+                </div>
+                <div class="table__checkbox">
+                    <input type="checkbox" name="typeMoney" value="ntd" id="">
+                    台幣NTD
+                </div>
+                <div class="table__checkbox">
+                    <input type="checkbox" name="typeMoney" value="cny" id="">
+                    人民幣CNY
+                </div>
+            </div>
+
+            <div class="table__tableWrapper">
+                <!-- <table id="myTable">
+                    <thead>
+                        <tr>
+                            <th>項次 <br> STT</th>
+                            <th>代號 <br> Mã VL </th>
+                            <th>中文名稱 <br> Tên tiếng hoa</th>
+                            <th>越文名稱 <br> Tên tiếng việt</th>
+                            <th>規格 <br> Quy cách</th>
+                            <th width="80px">單位 <br> Đơn vị</th>
+                            <th width="80px">數量 <br> Số lượng</th>
+                            <th>單價 <br> Đơn giá</th>
+                            <th>小計 <br> Tổng</th>
+                        </tr>
+                    </thead>
+            
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="number" name="quantity" class="quantity" step="any"></td>
+                            <td><input type="number" name="unitPrice" class="unitPrice" step="any"></td>
+                            <td><input type="text" name="subtotal" class="subtotal" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="number" name="quantity" class="quantity" step="any"></td>
+                            <td><input type="number" name="unitPrice" class="unitPrice" step="any"></td>
+                            <td><input type="text" name="subtotal" class="subtotal" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="number" name="quantity" class="quantity" step="any"></td>
+                            <td><input type="number" name="unitPrice" class="unitPrice" step="any"></td>
+                            <td><input type="text" name="subtotal" class="subtotal" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="number" name="quantity" class="quantity" step="any"></td>
+                            <td><input type="number" name="unitPrice" class="unitPrice" step="any"></td>
+                            <td><input type="text" name="subtotal" class="subtotal" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="number" name="quantity" class="quantity" step="any"></td>
+                            <td><input type="number" name="unitPrice" class="unitPrice" step="any"></td>
+                            <td><input type="text" name="subtotal" class="subtotal" readonly></td>
+                        </tr>
+
+                        <tr>
+                            <td>6</td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="number" name="quantity" class="quantity" step="any"></td>
+                            <td><input type="number" name="unitPrice" class="unitPrice" step="any"></td>
+                            <td><input type="text" name="subtotal" class="subtotal" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="number" name="quantity" class="quantity" step="any"></td>
+                            <td><input type="number" name="unitPrice" class="unitPrice" step="any"></td>
+                            <td><input type="text" name="subtotal" class="subtotal" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="number" name="quantity" class="quantity" step="any"></td>
+                            <td><input type="number" name="unitPrice" class="unitPrice" step="any"></td>
+                            <td><input type="text" name="subtotal" class="subtotal" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="number" name="quantity" class="quantity" step="any"></td>
+                            <td><input type="number" name="unitPrice" class="unitPrice" step="any"></td>
+                            <td><input type="text" name="subtotal" class="subtotal" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="number" name="quantity" class="quantity" step="any"></td>
+                            <td><input type="number" name="unitPrice" class="unitPrice" step="any"></td>
+                            <td><input type="text" name="subtotal" class="subtotal" readonly></td>
+                        </tr>
+                        
+                        <tr>
+                            <td colspan="6" style="font-weight: bold; font-size: 16px;">Tổng của từng cột</td>
+                            <td><input type="text" id="totalQuantity" readonly></td>
+                            <td><input type="text" id="totalUnitPrice" readonly></td>
+                            <td><input type="text" id="totalSubtotal" readonly></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="table__checkbox">
+                                    <input style="width: initial;" type="checkbox" name="typeMoney" value="usd" id="">
+                                    有發票
+                                </div>
+                                <br>
+                                <span>Có hóa đơn</span>
+                            </td>
+                            <td>
+                                <div class="table__checkbox">
+                                    <input style="width: initial;" type="checkbox" name="typeMoney" value="usd" id="">
+                                    無發票(原因):
+                                </div>
+                                <br>
+                                <span>Không hóa đơn(Nguyên nhân):</span>
+                            </td>
+                            <td colspan="6">
+                                <textarea name="" id="" cols="30" rows="10" placeholder="Nhập lý do.."></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table> -->
+                <table id="myTable">
+                    <thead>
+                        <tr>
+                            <th>項次 <br> STT</th>
+                            <th>代號 <br> Mã VL </th>
+                            <th>中文名稱 <br> Tên tiếng hoa</th>
+                            <th>越文名稱 <br> Tên tiếng việt</th>
+                            <th>規格 <br> Quy cách</th>
+                            <th width="80px">單位 <br> Đơn vị</th>
+                            <th width="80px">數量 <br> Số lượng</th>
+                            <th>單價 <br> Đơn giá</th>
+                            <th>小計 <br> Tổng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="number" name="quantity" class="quantity" step="any"></td>
+                            <td><input type="number" name="unitPrice" class="unitPrice" step="any"></td>
+                            <td><input type="text" name="subtotal" class="subtotal" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="text" name=""></td>
+                            <td><input type="number" name="quantity" class="quantity" step="any"></td>
+                            <td><input type="number" name="unitPrice" class="unitPrice" step="any"></td>
+                            <td><input type="text" name="subtotal" class="subtotal" readonly></td>
+                        </tr>
+                        <!-- Các hàng sẽ được thêm vào đây -->
+                        <tr>
+                            <td colspan="6" style="font-weight: bold; font-size: 16px; position: relative;"><button id="addRowButton">+</button><span>Tổng của từng cột</span></td>
+                            <td><input type="text" id="totalQuantity" readonly></td>
+                            <td><input type="text" id="totalUnitPrice" readonly></td>
+                            <td><input type="text" id="totalSubtotal" readonly></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="table__checkbox">
+                                    <input style="width: initial;" type="checkbox" name="typeMoney" value="usd" id="">
+                                    有發票
+                                </div>
+                                <br>
+                                <span>Có hóa đơn</span>
+                            </td>
+                            <td>
+                                <div class="table__checkbox">
+                                    <input style="width: initial;" type="checkbox" name="typeMoney" value="usd" id="">
+                                    無發票(原因):
+                                </div>
+                                <br>
+                                <span>Không hóa đơn(Nguyên nhân):</span>
+                            </td>
+                            <td colspan="6">
+                                <textarea name="" id="" cols="30" rows="10" placeholder="Nhập lý do.."></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    // Lấy tất cả các checkbox
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+    // Thêm sự kiện change cho từng checkbox
+    checkboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            // Nếu checkbox hiện tại được chọn
+            if (this.checked) {
+                // Bỏ chọn tất cả các checkbox khác
+                checkboxes.forEach(function(cb) {
+                    if (cb !== checkbox) {
+                        cb.checked = false;
+                    }
+                });
+            }
+        });
+    });
+
+    // Change Logo
+    document.getElementById('companySelect').addEventListener('change', function() {
+        // Lấy giá trị của tùy chọn được chọn
+        var selectedOption = this.options[this.selectedIndex];
+        
+        // Lấy URL của logo từ thuộc tính data-logo
+        var logoSrc = selectedOption.getAttribute('data-logo');
+        
+        // Thay đổi thuộc tính src của thẻ img
+        document.getElementById('logo').src = logoSrc;
+
+        
+        // Lấy màu nền từ thuộc tính data-color
+        var backgroundColor = selectedOption.getAttribute('data-color');
+
+        // Cập nhật màu nền của các ô tiêu đề
+        var headers = document.querySelectorAll('table th');
+            headers.forEach(function(header) {
+                header.style.backgroundColor = backgroundColor;
+            });
+
+            
+            document.querySelector(".table__select").style.color = backgroundColor;
+            document.querySelector(".table__select").style.borderColor = backgroundColor;
+            document.querySelector(".table__wrapper").style.borderColor = backgroundColor;
+            document.getElementById("addRowButton").style.color = backgroundColor;
+    });
+</script>
+
+<script>
+    function calculateSubtotal(row) {
+        const quantity = parseFloat(row.querySelector('.quantity').value) || 0;
+        const unitPrice = parseFloat(row.querySelector('.unitPrice').value) || 0;
+        const subtotal = quantity * unitPrice;
+        row.querySelector('.subtotal').value = subtotal.toFixed(2);
+    }
+
+    function calculateTotal() {
+        let totalQuantity = 0;
+        let totalUnitPrice = 0;
+        let totalSubtotal = 0;
+
+        document.querySelectorAll('#myTable tbody tr').forEach((row, index) => {
+            if (index < document.querySelectorAll('#myTable tbody tr').length - 2) { // Loại trừ hàng tổng và hàng thêm mới
+                calculateSubtotal(row);
+
+                totalQuantity += parseFloat(row.querySelector('.quantity').value) || 0;
+                totalUnitPrice += parseFloat(row.querySelector('.unitPrice').value) || 0;
+                totalSubtotal += parseFloat(row.querySelector('.subtotal').value) || 0;
+            }
+        });
+
+        document.getElementById('totalQuantity').value = totalQuantity.toFixed(2);
+        document.getElementById('totalUnitPrice').value = totalUnitPrice.toFixed(2);
+        document.getElementById('totalSubtotal').value = totalSubtotal.toFixed(2);
+    }
+
+    document.querySelectorAll('.quantity, .unitPrice').forEach(input => {
+        input.addEventListener('input', () => {
+            calculateTotal();
+        });
+    });
+
+    // Add row button event listener
+    document.getElementById('addRowButton').addEventListener('click', function() {
+        const table = document.getElementById('myTable').getElementsByTagName('tbody')[0];
+        const rowCount = table.rows.length;
+        const newRow = table.insertRow(rowCount - 2); // Thêm hàng mới trước hàng tổng
+
+        newRow.innerHTML = `
+            <td>${rowCount - 1}</td>
+            <td><input type="text" name=""></td>
+            <td><input type="text" name=""></td>
+            <td><input type="text" name=""></td>
+            <td><input type="text" name=""></td>
+            <td><input type="text" name=""></td>
+            <td><input type="number" name="quantity" class="quantity" step="any"></td>
+            <td><input type="number" name="unitPrice" class="unitPrice" step="any"></td>
+            <td><input type="text" name="subtotal" class="subtotal" readonly></td>
+        `;
+
+        // Add event listeners for the new row
+        newRow.querySelectorAll('.quantity, .unitPrice').forEach(input => {
+            input.addEventListener('input', () => {
+                calculateTotal();
+            });
+        });
+    });
+</script>
