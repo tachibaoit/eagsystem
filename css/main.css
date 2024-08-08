@@ -146,7 +146,9 @@ table textarea {
 .table__checkbox input[type=checkbox] {
   position: relative;
   cursor: pointer;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   width: 18px;
   height: 18px;
   padding: 0;
@@ -201,7 +203,8 @@ table textarea {
   border-radius: 100%;
   width: 80px;
   height: 80px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .table__tableWrapper input {
   border: solid 1px #7F8088;
@@ -248,4 +251,9 @@ table textarea {
 }
 #deleteLastRowButton:hover {
   opacity: 0.7;
+}
+
+#myTable2 th {
+  background-color: transparent !important;
+  color: black !important;
 }/*# sourceMappingURL=main.css.map */
