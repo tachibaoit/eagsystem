@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CÔNG TY TNHH EAGLE NICE VN</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -200,6 +200,12 @@
     document.getElementById('companySelect').addEventListener('change', function() {
         // Lấy giá trị của tùy chọn được chọn
         var selectedOption = this.options[this.selectedIndex];
+        
+        // Lấy tên công ty từ nội dung của tùy chọn
+        var companyName = selectedOption.textContent.trim();
+        
+        // Cập nhật nội dung thẻ <title>
+        document.title = companyName;
         
         // Lấy URL của logo từ thuộc tính data-logo
         var logoSrc = selectedOption.getAttribute('data-logo');
