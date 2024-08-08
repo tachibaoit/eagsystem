@@ -160,8 +160,8 @@ table textarea {
 }
 .table__logo img {
   border-radius: 100%;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   object-fit: cover;
 }
 .table__tableWrapper input {

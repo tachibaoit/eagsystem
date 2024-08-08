@@ -220,7 +220,9 @@
                             <th>規格 <br> Quy cách</th>
                             <th width="80px">單位 <br> Đơn vị</th>
                             <th width="80px">數量 <br> Số lượng</th>
+                            <th></th>
                             <th>單價 <br> Đơn giá</th>
+                            <th></th>
                             <th>小計 <br> Tổng</th>
                         </tr>
                     </thead>
@@ -233,7 +235,9 @@
                             <td><input type="text" name=""></td>
                             <td><input type="text" name=""></td>
                             <td><input type="number" name="quantity" class="quantity" step="any"></td>
+                            <td>x</td>
                             <td><input type="number" name="unitPrice" class="unitPrice" step="any"></td>
+                            <td>=</td>
                             <td><input type="text" name="subtotal" class="subtotal" readonly></td>
                         </tr>
                         <tr>
@@ -244,14 +248,18 @@
                             <td><input type="text" name=""></td>
                             <td><input type="text" name=""></td>
                             <td><input type="number" name="quantity" class="quantity" step="any"></td>
+                            <td>x</td>
                             <td><input type="number" name="unitPrice" class="unitPrice" step="any"></td>
+                            <td>=</td>
                             <td><input type="text" name="subtotal" class="subtotal" readonly></td>
                         </tr>
                         <!-- Các hàng sẽ được thêm vào đây -->
                         <tr>
                             <td colspan="6" style="font-weight: bold; font-size: 16px; position: relative;"><button id="addRowButton">+</button><span>Tổng của từng cột</span></td>
                             <td><input type="text" id="totalQuantity" readonly></td>
+                            <td></td>
                             <td><input type="text" id="totalUnitPrice" readonly></td>
+                            <td></td>
                             <td><input type="text" id="totalSubtotal" readonly></td>
                         </tr>
                         <tr>
@@ -271,8 +279,8 @@
                                 <br>
                                 <span>Không hóa đơn(Nguyên nhân):</span>
                             </td>
-                            <td colspan="6">
-                                <textarea name="" id="" cols="30" rows="10" placeholder="Nhập lý do.."></textarea>
+                            <td colspan="8">
+                                <textarea name="" id="" cols="30" rows="5" placeholder="Nhập lý do.."></textarea>
                             </td>
                         </tr>
                     </tbody>
@@ -386,7 +394,9 @@
             <td><input type="text" name=""></td>
             <td><input type="text" name=""></td>
             <td><input type="number" name="quantity" class="quantity" step="any"></td>
+            <td>x</td>
             <td><input type="number" name="unitPrice" class="unitPrice" step="any"></td>
+            <td>=</td>
             <td><input type="text" name="subtotal" class="subtotal" readonly></td>
         `;
 
