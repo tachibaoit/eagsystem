@@ -64,7 +64,7 @@ table textarea {
   height: 40px;
   font-size: 36px;
   color: #ff682b;
-  border: solid 1px #ff682b;
+  border-bottom: solid 1px #ff682b;
   transition: all 0.2s ease;
 }
 .table__select:hover {

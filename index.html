@@ -334,12 +334,17 @@
 </script>
 
 <script>
+    function formatCurrency(value) {
+        return value.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+    }
+
     function calculateSubtotal(row) {
         const quantity = parseFloat(row.querySelector('.quantity').value) || 0;
         const unitPrice = parseFloat(row.querySelector('.unitPrice').value) || 0;
         const subtotal = quantity * unitPrice;
-        row.querySelector('.subtotal').value = subtotal.toFixed(2);
+        row.querySelector('.subtotal').value = subtotal.toLocaleString('en-US');
     }
+
 
     function calculateTotal() {
         let totalQuantity = 0;
@@ -352,13 +357,13 @@
 
                 totalQuantity += parseFloat(row.querySelector('.quantity').value) || 0;
                 totalUnitPrice += parseFloat(row.querySelector('.unitPrice').value) || 0;
-                totalSubtotal += parseFloat(row.querySelector('.subtotal').value) || 0;
+                totalSubtotal += parseFloat(row.querySelector('.subtotal').value.replace(/[^0-9.-]+/g, '')) || 0;
             }
         });
 
-        document.getElementById('totalQuantity').value = totalQuantity.toFixed(2);
-        document.getElementById('totalUnitPrice').value = totalUnitPrice.toFixed(2);
-        document.getElementById('totalSubtotal').value = totalSubtotal.toFixed(2);
+        document.getElementById('totalQuantity').value = totalQuantity.toLocaleString('en-US');
+        document.getElementById('totalUnitPrice').value = totalUnitPrice.toLocaleString('en-US');
+        document.getElementById('totalSubtotal').value = totalSubtotal.toLocaleString('en-US');
     }
 
     document.querySelectorAll('.quantity, .unitPrice').forEach(input => {
