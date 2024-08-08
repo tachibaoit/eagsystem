@@ -190,4 +190,23 @@ table textarea {
 }
 #addRowButton:hover {
   opacity: 0.7;
+}
+
+#deleteLastRowButton {
+  font-weight: 500;
+  position: absolute;
+  top: 0;
+  left: 36px;
+  font-size: 28px;
+  font-weight: 500;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: black;
+  margin-top: -2px;
+}
+#deleteLastRowButton:hover {
+  opacity: 0.7;
 }/*# sourceMappingURL=main.css.map */
