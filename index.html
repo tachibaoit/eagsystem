@@ -77,7 +77,7 @@
                             <td><input type="text" name=""></td>
                             <td><input type="text" name=""></td>
                             <td><input type="text" name=""></td>
-                            <td><input type="number" name="quantity" class="quantity" step="any"></td>
+                            <td><input type="number" name="quantity" class="quantity" step="any" autocomplete="off"></td>
                             <td>x</td>
                             <td><input type="number" name="unitPrice" class="unitPrice" step="any"></td>
                             <td>=</td>
@@ -90,7 +90,7 @@
                             <td><input type="text" name=""></td>
                             <td><input type="text" name=""></td>
                             <td><input type="text" name=""></td>
-                            <td><input type="number" name="quantity" class="quantity" step="any"></td>
+                            <td><input type="number" name="quantity" class="quantity" step="any" autocomplete="off"></td>
                             <td>x</td>
                             <td><input type="number" name="unitPrice" class="unitPrice" step="any"></td>
                             <td>=</td>
@@ -112,28 +112,31 @@
                         <tr>
                             <td colspan="2">
                                 <div class="table__checkbox">
-                                    <input style="width: initial;" type="checkbox" name="typeMoney" value="usd" id="">
+                                    <input style="width: initial;" type="checkbox" name="hoadon" value="yes" id="">
                                     有發票
                                 </div>
                                 <br>
                                 <span>Có hóa đơn</span>
                             </td>
                             <td>
+                                <!-- Checkbox Không hóa đơn -->
                                 <div class="table__checkbox">
-                                    <input style="width: initial;" type="checkbox" name="typeMoney" value="usd" id="">
+                                    <input style="width: initial;" type="checkbox" name="hoadon" value="no" id="khongHoaDonCheckbox">
                                     無發票(原因):
                                 </div>
                                 <br>
                                 <span>Không hóa đơn(Nguyên nhân):</span>
                             </td>
                             <td colspan="9">
-                                <textarea name="" id="" cols="30" rows="5" placeholder="Nhập lý do.."></textarea>
+                                <!-- Textarea lý do -->
+                                <textarea name="" id="reasonTextarea" cols="30" rows="5" placeholder="Nhập lý do.."></textarea>
                             </td>
                         </tr>
+                        
                         <tr>
                             <td colspan="11" style="text-align: left; font-weight: 600; padding: 8px;">用途及說明
                                 <div class="table__checkbox table__checkboxAlt">
-                                    (&nbsp;<input style="width: initial;" type="checkbox" name="typeMoney" value="usd" id="">急 /&nbsp;<input style="width: initial;" type="checkbox" name="typeMoney" value="usd" id="">緩 ):
+                                    (&nbsp;<input style="width: initial;" type="checkbox" name="mucdich" value="khanCap" id="">急 /&nbsp;<input style="width: initial;" type="checkbox" name="mucdich" value="cham" id="">緩 ):
                                 </div>
                                 <br>
                                 說明原因 - Mục đích:
@@ -162,10 +165,10 @@
                     </tbody>
                 </table>
 
+                <!-- Nút Submit -->
                 <div class="ctaContainer">
-                    <button name="submit" class="cta" type="submit">Submit</button>
+                    <button name="submit" class="cta" id="submitButton" type="submit">Submit</button>
                 </div>
-
             </div>
         </div>
     </div>
@@ -174,6 +177,7 @@
 </html>
 
 <script>
+
     // Lấy tất cả các checkbox
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
@@ -182,8 +186,8 @@
         checkbox.addEventListener('change', function() {
             // Nếu checkbox hiện tại được chọn
             if (this.checked) {
-                // Bỏ chọn tất cả các checkbox khác
-                checkboxes.forEach(function(cb) {
+                // Bỏ chọn tất cả các checkbox khác trong cùng nhóm
+                document.querySelectorAll('input[name="' + this.name + '"]').forEach(function(cb) {
                     if (cb !== checkbox) {
                         cb.checked = false;
                     }
@@ -223,9 +227,6 @@
 </script>
 
 <script>
-    function formatCurrency(value) {
-        return value.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
-    }
 
     function calculateSubtotal(row) {
         const quantity = parseFloat(row.querySelector('.quantity').value) || 0;
@@ -233,7 +234,6 @@
         const subtotal = quantity * unitPrice;
         row.querySelector('.subtotal').value = subtotal.toLocaleString('en-US');
     }
-
 
     function calculateTotal() {
         let totalQuantity = 0;
@@ -268,13 +268,13 @@
         const newRow = table.insertRow(rowCount - 3); // Thêm hàng mới trước hàng tổng
 
         newRow.innerHTML = `
-            <td>${rowCount - 1}</td>
+            <td>${rowCount - 2}</td>
             <td><input type="text" name=""></td>
             <td><input type="text" name=""></td>
             <td><input type="text" name=""></td>
             <td><input type="text" name=""></td>
             <td><input type="text" name=""></td>
-            <td><input type="number" name="quantity" class="quantity" step="any"></td>
+            <td><input type="number" name="quantity" class="quantity" step="any" autocomplete="off"></td>
             <td>x</td>
             <td><input type="number" name="unitPrice" class="unitPrice" step="any"></td>
             <td>=</td>
@@ -304,4 +304,52 @@
     document.addEventListener('DOMContentLoaded', function() {
         calculateTotal();
     });
+</script>
+
+<script>
+    // Lấy các phần tử
+    const khongHoaDonCheckbox = document.getElementById('khongHoaDonCheckbox');
+    const coHoaDonCheckbox = document.querySelector('input[name="hoadon"][value="yes"]');
+    const reasonTextarea = document.getElementById('reasonTextarea');
+    const submitButton = document.getElementById('submitButton');
+
+    // Hàm kiểm tra để bật/tắt nút Submit
+    function checkSubmitButtonState() {
+        if (khongHoaDonCheckbox.checked && reasonTextarea.value.trim() === "") {
+            submitButton.disabled = true;
+        } else {
+            submitButton.disabled = false;
+        }
+    }
+
+    // Sự kiện khi checkbox "Không hóa đơn" thay đổi
+    khongHoaDonCheckbox.addEventListener('change', function() {
+        checkSubmitButtonState();
+        // Khi bỏ chọn "Không hóa đơn", textarea được làm trống và submit được kích hoạt
+        if (!khongHoaDonCheckbox.checked) {
+            reasonTextarea.value = "";
+            submitButton.disabled = false;
+        }
+    });
+
+    // Sự kiện khi checkbox "Có hóa đơn" thay đổi
+    coHoaDonCheckbox.addEventListener('change', function() {
+        if (coHoaDonCheckbox.checked) {
+            // Bỏ chọn "Không hóa đơn" và làm trống trường lý do
+            khongHoaDonCheckbox.checked = false;
+            reasonTextarea.value = "";
+            submitButton.disabled = false;
+        }
+    });
+
+    // Sự kiện khi người dùng nhập vào textarea
+    reasonTextarea.addEventListener('input', function() {
+        checkSubmitButtonState();
+    });
+
+    // Kiểm tra trạng thái ban đầu khi trang được tải
+    document.addEventListener('DOMContentLoaded', function() {
+        checkSubmitButtonState();
+    });
+
 </script>
